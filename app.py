@@ -23,3 +23,5 @@ def scrape():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+#so this works, and renders on the index.html if I employ the app via here not through the index.html itself...

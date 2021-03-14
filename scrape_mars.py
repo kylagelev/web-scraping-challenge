@@ -12,15 +12,17 @@ db = client.mars_db
 collection = db.mars_data
 
 def init_browser():
-    # @NOTE: Replace the path with your actual path to the chromedriver
     executable_path = {'executable_path': ChromeDriverManager().install()}
     return Browser("chrome", **executable_path, headless=False)
 
-def scrape():
+def scrape_info():
     #nasa mars news
-        url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
         browser = init_browser()
+        url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
         browser.visit(url)
+
+        time.sleep(5)
+
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
 
@@ -54,6 +56,8 @@ def scrape():
         browser = init_browser()
         browser.visit(url)
 
+        time.sleep(5)
+
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
 
@@ -79,11 +83,52 @@ def scrape():
         mars['facts'] = vert_html_table
 
     #Mars Hemispheres
+        hemisphere_image_urls = []
 
+        #Cerberus Hemisphere Enhanced
+        url_1 = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced'
+        #Schiaparelli Hemisphere Enhanced
+        url_2 = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/schiaparelli_enhanced'
+        #Syrtis Major Hemisphere Enhanced
+        url_3 = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced'
+        #Valles Marineris Hemisphere Enhanced
+        url_4 = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced'
 
+        urls = [url_1, url_2, url_3, url_4]
+
+        for url in urls:
+            browser = init_browser()
+            browser.visit(url)
+
+            time.sleep(5)
+            
+            mars_hemisphere = {}
+            
+            html = browser.html
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            #pulling image url
+            img = soup.find(class_='wide-image')['src']
+            img_link = f'https://astrogeology.usgs.gov/{img}'
+            
+            #pulling title of hemisphere
+            title = soup.find('h2', class_='title').text
+            
+            #appending to dictionary
+            mars_hemisphere['title'] = title
+            mars_hemisphere['img_url'] = img_link
+            hemisphere_image_urls.append(mars_hemisphere)
+            
+            browser.quit()
         
+        mars['hemispheres'] = hemisphere_image_urls
 
+    #adding to mongo_db
+        collection.insert_one(mars)
+        
+        return mars
 
-# if __name__ == "__main__":
-#    data = scrape()
- #   print(data)
+if __name__ == "__main__":
+    data = scrape_info()
+    print(data)
+        

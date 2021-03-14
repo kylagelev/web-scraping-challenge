@@ -78,7 +78,7 @@ def scrape_info():
         vert_df = df.rename(columns = {0:'', 1:'Mars'})
         vert_df = vert_df.set_index('')
         vert_html_table = vert_df.to_html()
-        vert_html_table = vert_html_table.replace('\n', '')
+        #vert_html_table = vert_html_table.replace('\n', '')
         
         mars['facts'] = vert_html_table
 
@@ -128,4 +128,7 @@ def scrape_info():
         
         return mars
 
-        
+if __name__ == "__main__":
+    data = scrape_info()
+    print(data)
+

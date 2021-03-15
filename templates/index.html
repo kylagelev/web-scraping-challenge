@@ -14,14 +14,14 @@
   <div class="container-fluid">
 
     <div class="jumbotron text-center">
-      <span><h1 class='header_jumbo'>Mission to Mars</h1></span>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+        <span style='color:black'><h1>Mission to </span><span style='color:coral'>Mars</span></h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
     </div>
 
     <div class='news'>
       <div class='row'>
         <div class='col-md-12'>
-          <h3>Mars News!</h3>
+          <h3><span style='color:coral'>Mars</span> News!</h3>
           <h4>{{ mars.title }}</h4>
           <p>{{ mars.news_p }}</p>
         </div>
@@ -31,13 +31,13 @@
     <div class='row'>
       <div class='jpl_image'>
         <div class='col-md-6'>
-          <h3><center>Featured Mars Image!</center></h3>
+          <h3><center>Featured <span style='color:coral'>Mars</span> Image!</center></h3>
           <img src='{{ mars.featured_image }}' alt='Featured Image' width="600" height="400">
         </div>
       </div>
       <div class='facts'>
         <div class='col-md-6'>
-          <h3><center>Mars Facts!</center></h3>
+          <h3><center><span style='color:coral'>Mars</span> Facts!</center></h3>
           <center>
             {{ mars.facts|safe }}
           </center>
@@ -48,7 +48,7 @@
     <div class='hemispheres'>
       <div class='row'>
         <div class='col-md-12'>
-          <h3 class='hemi'>Mars Hemispheres!</h3>
+          <h3 class='hemi'><span style='color:coral'>Mars</span> Hemispheres!</h3>
         </div>
           <div class='col-md-6'>
             <h4>

@@ -4,11 +4,11 @@
 
 ### This repository contains a jupyter notebook, an index.html file (in templates) and a corresponding style_sheet (in static), an app (app.py), and a python file (scrape_mars.py with the scraping function). 
 
-#### Information on how to scrape data from the web, connect to mongodb, and add to the html file are what follows. 
+#### Information on how to scrape data from the web, connect to MongoDB, and add to the html file are what follows. 
 
 Initially, web scraping was completed using a jupyter notebook. Within the folder, "Mission_to_Mars," contains the aformentioned jupyter-notebook, and an output folder of the initial html table(s) completed on the "Mars Facts!"
 
-Using the jupyter notebook as a guide, using visual studio, a python file was created with a similar means of scraping for data from a series of sites. These include: 
+Using the Jupyter notebook as a guide, using Visual Studio, a python file was created with a similar means of scraping for data from a series of sites. These include: 
 * [NASA News Site](https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest)
   * Scraped to find the latest news article and corresponding paragraph.
 * [JPL Featured Image](https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html)
@@ -16,7 +16,7 @@ Using the jupyter notebook as a guide, using visual studio, a python file was cr
 * [Mars Facts](https://space-facts.com/mars/)
   * Scraped for "Mars Facts" to include in a table.
 * [Mars Hemispheres](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars)
-  * Scraped for images and names of Mars 4 Hemispheres.
+  * Scraped for images and names of Mars' 4 Hemispheres.
  
 These were then inserted into a MongoDB database (which is updated every time the app runs).
 

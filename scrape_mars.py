@@ -5,11 +5,6 @@ import time
 import pymongo
 import pandas as pd
 
-conn = 'mongodb://localhost:27017'
-client = pymongo.MongoClient(conn)
-
-db = client.mars_db
-collection = db.mars_data
 
 def init_browser():
     executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -78,7 +73,7 @@ def scrape_info():
         vert_df = df.rename(columns = {0:'', 1:'Mars'})
         vert_df = vert_df.set_index('')
         vert_html_table = vert_df.to_html()
-        #vert_html_table = vert_html_table.replace('\n', '')
+        vert_html_table = vert_html_table.replace('\n', '')
         
         mars['facts'] = vert_html_table
 
@@ -122,9 +117,6 @@ def scrape_info():
             browser.quit()
         
         mars['hemispheres'] = hemisphere_image_urls
-
-    #adding to mongo_db
-        collection.insert_one(mars)
         
         return mars
 

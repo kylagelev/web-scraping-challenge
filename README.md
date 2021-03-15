@@ -2,7 +2,9 @@
 
 ## Outer space may be vast, but so is the internet.
 
-### Contains jupyter notebook, index.html, style_sheet, app, and python file containing information to scrape data from the web, connect to mongodb, and add to html file. 
+### This repository contains a jupyter notebook, an index.html file (in templates) and a corresponding style_sheet (in static), an app (app.py), and a python file (scrape_mars.py with the scraping function). 
+
+#### Information on how to scrape data from the web, connect to mongodb, and add to the html file are what follows. 
 
 Initially, web scraping was completed using a jupyter notebook. Within the folder, "Mission_to_Mars," contains the aformentioned jupyter-notebook, and an output folder of the initial html table(s) completed on the "Mars Facts!"
 
@@ -18,4 +20,4 @@ Using the jupyter notebook as a guide, using visual studio, a python file was cr
  
 These were then inserted into a mongodb database. 
 
-Following this, an html file was created that linked to an app in order to run the scraping and add it to database whenever the button was pressed. Screenshots of this app are included in the folder, 
+Following this, an html file was created that linked to an app in order to run the scraping and add it to the database whenever the button was pressed, and present the information formatted onto the index.html. Screenshots of the completed, final app are included in the folder, app_screenshots. 

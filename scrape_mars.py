@@ -5,7 +5,6 @@ import time
 import pymongo
 import pandas as pd
 
-
 def init_browser():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     return Browser("chrome", **executable_path, headless=False)

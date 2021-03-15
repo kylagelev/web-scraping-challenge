@@ -14,9 +14,9 @@ Using the jupyter notebook as a guide, using visual studio, a python file was cr
 * [JPL Featured Image](https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html)
   * Scraped for the featured image.
 * [Mars Facts](https://space-facts.com/mars/)
-  * Scraped for Mars Facts within a table
+  * Scraped for "Mars Facts" to include in a table.
 * [Mars Hemispheres](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars)
-  * Scraped for Mars' 4 Hemispheres
+  * Scraped for images and names of Mars 4 Hemispheres.
  
 These were then inserted into a MongoDB database (which is updated every time the app runs).
 

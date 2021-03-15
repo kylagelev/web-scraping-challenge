@@ -21,3 +21,5 @@ Using the jupyter notebook as a guide, using visual studio, a python file was cr
 These were then inserted into a mongodb database. 
 
 Following this, an html file was created that linked to an app in order to run the scraping and add it to the database whenever the button was pressed, and present the information formatted onto the index.html. Screenshots of the completed, final app are included in the folder, app_screenshots. 
+
+## May your scraping lead you to the great beyonds of space!

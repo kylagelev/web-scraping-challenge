@@ -2,7 +2,7 @@
 
 ## Outer space may be vast, but so is the internet.
 
-### This repository contains a jupyter notebook, an index.html file (in templates) and a corresponding style_sheet (in static), an app (app.py), and a python file (scrape_mars.py with the scraping function). 
+### This repository contains a jupyter notebook, an index.html file and a corresponding style_sheet (in static), an app (app.py), and a python file (scrape_mars.py with the scraping function). 
 
 #### Information on how to scrape data from the web, connect to MongoDB, and add to the html file are what follows. 
 
